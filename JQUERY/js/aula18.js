@@ -18,6 +18,29 @@ $(function(){
             }
         })
         
+        $('form').on('submit',function(e){
+            e.preventDefault();
+            const dados = {};
+
+            $('form').find('input').each(function(i,el){
+                dados[el.id] = el.value;
+            })
+
+            $.ajax('https://jsonplaceholder.typicode.com/users',{
+                type:'POST',
+                data: dados,
+                success: function(_dados){
+                    console.log(_dados)
+                    mostrarDados([_dados])
+                    alert('Sucesso !!!')
+
+                },
+                error:function(){
+                    alert('Error !!')
+                }
+            })
+        })
+        
         function mostrarDados(dados){
             $.each(dados, function(i, el){
                 tbody.append(`<tr class="linha">
@@ -25,14 +48,17 @@ $(function(){
                                 <td class="nome">${el.name}</td>
                                 <td class="username">${el.username}</td>
                                 <td class="email">${el.email}</td>
-                                <td class="endereco">Rua: ${el.address.street}, Apartamento: ${el.address.suite}, Código Postal: ${el.address.zipcode}, Latitude: ${el.address.geo.lat} | Longitude: ${el.address.geo.lng}</td>
+                                </tr>     
+                                `)
+
+                               
+                                /*<td class="endereco">Rua: ${el.address.street}, Apartamento: ${el.address.suite}, Código Postal: ${el.address.zipcode}, Latitude: ${el.address.geo.lat} | Longitude: ${el.address.geo.lng}</td>
                                 <td class="phone">${el.phone}</td>
                                 <td class="site">${el.website}</td>
                                 <td class="company">Nome Companhia: ${el.company.name}, CatchPhrase: ${el.company.catchPhrase}</td>
                                     <tr>
-                                </td>
-                              </tr>                              
-             `)
+                                </td>*/
+                 
             })
         }
     }
