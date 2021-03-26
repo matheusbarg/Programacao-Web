@@ -2,30 +2,28 @@
 const baseUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 
-const searchInput = getElement('.search-input'),
-    searchButton = getElement('.search-button'),
-    container = getElement('.pokemon'),
-    erroMessage = getElement('.error');
+const searchInput = document.querySelector('.search-input'),
+    searchButton = document.querySelector('.search-button'),
+    container = document.querySelector('.pokemon'),
+    erroMessage =  document.querySelector('.error');
 
 var pokeName,
     pokemon,
-    card;
+    carta;
 
-function getElement(element) {
-    return document.querySelector(element);
-}
-
-function requestPokeInfo(url, name) {
+function obterPokeInfo(url, name) {
     fetch(url + name)
         .then(response => response.json())
         .then(data => {
             pokemon = data;
         })
         .catch(err => console.log(err));
+       
+        
 }
 
-function createCard() {
-    card = `
+function criarCard() {
+    carta = `
 
 <div class="pokemon-info">
     <div class="pokemon-picture">
@@ -34,17 +32,19 @@ function createCard() {
         <h1 class="name">Nome: ${pokemon.name}</h1>
         <h2 class="number">Nº ${pokemon.id}</h2>
         <h3 class="type">Tipo: ${pokemon.types.map(item => item.type.name).toString()}</h3>
-        <h3 class="skill">Habilidades: ${pokemon.moves.map(item => ' ' + item.move.name).toString()}</h3>
+        <h3 class="skill">Habilidades: ${pokemon.moves.map(item => +'' + item.move.name).toString()}</h3>
         <h3 class="weight">Peso: ${pokemon.weight / 10}kg</h3>
         <h3 class="height">Altura: ${pokemon.height / 10}m</h3>
     </div>
     `;
 
-    return card;
+    return carta;
 }
 
 function startApp(pokeName) {
-    requestPokeInfo(baseUrl, pokeName);
+    obterPokeInfo(baseUrl, pokeName);
+
+     
 
     setTimeout(function () {
 
@@ -54,19 +54,18 @@ function startApp(pokeName) {
         } else {
             erroMessage.style.display = 'none';
             container.style.display = 'flex';
-            container.innerHTML = createCard();
+            container.innerHTML = criarCard();
+            
         }
-    }, 20);
+    });
 }
 
 searchButton.addEventListener('click', event => {
     event.preventDefault();
     pokeName = searchInput.value.toLowerCase();
     startApp(pokeName);
-    container.classList.add('fade');
-
-
+    
     setTimeout(() => {
         container.classList.remove('fade');
-    }, 30);
+    }, 30000);
 });

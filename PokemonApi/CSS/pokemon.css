@@ -1,11 +1,12 @@
 body{
-    background-color:rgb(182, 57, 57);
+    background-image:url("C:/Users/Claus Barg/Desktop/Programção Web/PokemonApi/fundo.png") ;
+    
 }
 main{
-    width:500px;
+    width:900px;
     height:1500px;
     text-align: center;
-    margin-left:400px;
+    margin-left:200px;
 }
 #logo{
     height:350px;
@@ -29,9 +30,37 @@ h1.name{
     border: solid 5px;
     margin-top:20px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     width: 1050px;
+    font-size: 15px;
+}
+
+.pokemon-picture{
+    width:900px;
+    height:200px; 
+    margin: 0 auto;
+
 }
 #pokemon{
-    margin-left: 200px;
+    width:200px;
+    height:200px;
+    margin-left:0px;
+   
 }
+.search-input{
+    width:320px;
+    height: 30px;
+    border: solid 3px;;
+    border-radius: 20px;
+    margin-left:30px ;
+    margin-bottom: 50px;
+}
+
+.search-button{
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+ 
+    
+}
+
