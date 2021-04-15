@@ -9,7 +9,10 @@ app.get("/",(request,response) => {
     app.get("/produto",(request,response) => {
         return response.json({
             id:1,
-            nome:'Jaqueta'
+            nome:'Jaqueta'},
+            { 
+            id:2,
+            nome:'Tenis'
         });
     });
 
@@ -17,6 +20,8 @@ app.get("/",(request,response) => {
        console.log(request.body);
         return response.json({
             id:1,
+            nome:'Tenis',
+            id:2,
             nome:'Jaqueta'
         });
     });
@@ -24,8 +29,11 @@ app.get("/",(request,response) => {
     app.get("/produto/:id",(request,response) => {
        console.log(request.params);
         return response.json({
+                       
             id:1,
-            nome:'Jaqueta'
+            nome:'Jaqueta',
+    
+
         });
     });
     
