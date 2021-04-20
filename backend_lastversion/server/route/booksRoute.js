@@ -21,7 +21,7 @@ router.delete('/book/:id',async function(req,res){
 router.put('/book',async function(req,res) {
     const book = req.body;
     const newBook = await booksService.saveBook(book);
-    res.json(novoLivro);
+    res.json(newBook);
 });
 
 module.exports =router;

@@ -11,5 +11,5 @@ exports.deleteBook = function(bookID){
     return booksData.getBook(bookID);
 }
 exports.saveBook = function(book){
-    return bookData.saveBook(book);
+    return booksData.saveBook(book);
 }
