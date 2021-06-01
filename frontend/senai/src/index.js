@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import HelloMessage from './HelloMessage';
-import Teste from './paginas/Teste/';
-
+import Routes from './router';
+//import { Router } from 'react-router';
+//import HelloMessage from './HelloMessage';
+//import Teste from './paginas/Teste/';
+//import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-  <App/>
-  <Teste/>
-  <HelloMessage/> 
+  <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );
