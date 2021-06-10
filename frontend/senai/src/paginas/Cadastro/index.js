@@ -3,7 +3,8 @@ import api from '../Services/api';
 
 function CadastroLivro() {
 
-    const [descricao, setDescricao] = useState('');
+    const [idlivro, setID] = useState('');
+    const [nome, setNome] = useState('');
     const [editora, setEditora] = useState('');
     const [isbn, setIsbn] = useState('');
     const [quantidade, setQuantidade] = useState('');
@@ -14,7 +15,8 @@ function CadastroLivro() {
         e.preventDefault();
 
         const dados = {
-            descricao,
+            idlivro,
+            nome,
             editora,
             isbn,
             quantidade,
@@ -24,7 +26,7 @@ function CadastroLivro() {
 
         try {
             console.log(dados);
-            const response = await api.post('book', dados);
+            const response = await api.put('book', dados);
             const id = response.data.id;
             console.log(response.data);
             alert("o id do livro é " + id);
@@ -40,10 +42,15 @@ function CadastroLivro() {
                 <h1>Cadastro de Livro</h1>
 
                 <form onSubmit={handleCadastro}>
+                    
                     <input 
+                        placeholder="ID"
+                        value={idlivro}
+                        onChange={e => setID(e.target.value)}/> 
+                     <input
                         placeholder="Descricao do livro"
-                        value={descricao}
-                        onChange={e => setDescricao(e.target.value)}/> 
+                        value={nome}
+                        onChange={e => setNome(e.target.value)}/> 
 
                     <input 
                         placeholder="Editora do livro"

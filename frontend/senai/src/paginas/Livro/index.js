@@ -40,6 +40,7 @@ export default function ListaLivro() {
 
   async function handleDeleteLivro(id) {
     try {
+      console.log(id);
         await api.delete(`book/${id}`, {});
         setLivros(livros.filter(livro => livro.idlivro !== id));
     } catch (error) {
@@ -67,7 +68,7 @@ export default function ListaLivro() {
         </TableHead>
         <TableBody>
           {livros.map(livro => (
-            <StyledTableRow  key={livro.idlivro}>
+            <StyledTableRow  key={livro.id}>
               <StyledTableCell  component="th" scope="row">
                 {livro.nome}
               </StyledTableCell>
@@ -77,11 +78,9 @@ export default function ListaLivro() {
               <StyledTableCell  align="center">
                   <button type="button" onClick={() => handleDeleteLivro(livro.idlivro)}>Excluir</button></StyledTableCell >
             </StyledTableRow >
-          ))}
+          ))};
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  )
 }
-
-

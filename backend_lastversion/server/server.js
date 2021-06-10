@@ -5,6 +5,7 @@ const booksRoute = require('./route/booksRoute');
 const clienteRoute = require('./route/clienteRoute');
 const editoraRoute = require('./route/editoraRoute');
 const assuntoRoute = require('./route/assuntoRoute');
+const usuarioRoute = require('./route/usuarioRoute');
 
 
 app.use(express.json());
@@ -13,5 +14,6 @@ app.use(booksRoute);
 app.use(clienteRoute);
 app.use(editoraRoute);
 app.use(assuntoRoute);
+app.use(usuarioRoute);
 app.listen(3334);
 
