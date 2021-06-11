@@ -1,0 +1,27 @@
+body{
+    width: 960px;
+    margin: 0 auto px;
+    text-align: center;
+    background-color: rgb(146, 146, 146);
+
+    
+}
+#inputs{
+    width:400px;
+    height:500px;
+    text-align:center;
+    margin-left: 450px;
+    margin:0 auto px;
+    background-color: rgb(247, 242, 213);
+    margin-top: 50px;
+    border-radius: 40px;
+    border: 3px solid black;
+    
+}
+form{
+    width: 250px;
+    margin:0 auto px;
+    margin-left:80px;
+    margin-top: 50px;
+  
+}
