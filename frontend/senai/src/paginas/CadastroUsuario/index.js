@@ -3,6 +3,9 @@ import api from '../services/api';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import './style.css'
 
 function CadastroUsuario() {
@@ -38,7 +41,8 @@ function CadastroUsuario() {
     }
 
     return (
-        <div id="inputs">
+      
+       <div id="inputs">
             <div>
                 <h1>Cadastro de Usuarios</h1>
 
@@ -81,13 +85,16 @@ function CadastroUsuario() {
                             onChange={e => setTelefone(e.target.value)}
                             variant="filled"/> 
                         
+                  <div id ="botao">
                   <Button variant="contained" color="primary" type="submit" disableElevation>Cadastro</Button>
+                  </div>
                 </form>
     
 
             </div>
         </div>
-
+      
+       
     );
 }
 
