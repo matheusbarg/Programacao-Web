@@ -1,0 +1,19 @@
+body{
+    overflow: hidden;
+    width: 960px;
+
+}
+#menu{
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+    background-color:rgb(214, 214, 214) ;
+    float:left;
+    margin-top:150px;
+    height: 300px;
+    width: 230px;
+    margin-left: 350px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}

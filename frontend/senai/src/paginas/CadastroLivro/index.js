@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import api from '../services/api';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import './styleLivro.css';
+
 
 
 function CadastroLivro() {
@@ -40,7 +42,10 @@ function CadastroLivro() {
     }
 
     return (
-        <div>
+       
+       
+       <div>
+         
             <div id = 'inputs'>
                 <h1>Cadastro de Livro</h1>
 
@@ -49,37 +54,44 @@ function CadastroLivro() {
                 <TextField
                         placeholder="ID"
                         value={idlivro}
-                        onChange={e => setID(e.target.value)}/> 
+                        onChange={e => setID(e.target.value)}
+                        variant="outlined"/> 
                      <TextField
                         placeholder="Descricao do livro"
                         value={nome}
-                        onChange={e => setNome(e.target.value)}/> 
+                        onChange={e => setNome(e.target.value)}
+                        variant="outlined"/> 
 
                 <TextField
                         placeholder="Editora do livro"
                         value={editora}
-                        onChange={e => setEditora(e.target.value)}/> 
+                        onChange={e => setEditora(e.target.value)}
+                        variant="outlined"/> 
 
                 <TextField
                         placeholder="Isbn"
                         value={isbn}
-                        onChange={e => setIsbn(e.target.value)}/> 
+                        onChange={e => setIsbn(e.target.value)}
+                        variant="outlined"/> 
 
                 <TextField 
                         placeholder="quantidade"
                         value={quantidade}
-                        onChange={e => setQuantidade(e.target.value)}/> 
+                        onChange={e => setQuantidade(e.target.value)}
+                        variant="outlined"/> 
 
                 <TextField 
                         placeholder="assunto"
                         value={assunto}
-                        onChange={e => setAssunto(e.target.value)}/> 
+                        onChange={e => setAssunto(e.target.value)}
+                        variant="outlined"/> 
 
                 <TextField      
                         placeholder="autor"
                         value={autor}
-                        onChange={e => setAutor(e.target.value)}/> 
-                     <Button variant="contained" color="primary" type="submit" disableElevation>Cadastro</Button>   
+                        onChange={e => setAutor(e.target.value)}
+                        variant="outlined"/> 
+                     <Button variant="contained" color="primary" type="submit" >Cadastro</Button>   
                 </form>
     
 
