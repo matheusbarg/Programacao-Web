@@ -13,5 +13,5 @@ exports.deleteUsuario = function(usuarioID){
 }
 
 exports.saveUsuario = function(usuario){
-    return database.one('insert into usuario (nome,email,senha,telefone) values ($,1$2,$3,$4) returning *',
+    return database.one('insert into usuario (nome,email,senha,telefone) values ($1,$2,$3,$4) returning *',
     [usuario.nome,usuario.email,usuario.senha,usuario.telefone])};
