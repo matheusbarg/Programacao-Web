@@ -15,6 +15,7 @@ import Container from '@material-ui/core/Container';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
@@ -64,7 +65,8 @@ export default function CadastroUsuario() {
             const response = await api.put('usuario', dados);
             const id = response.data.id;
             console.log(response.data);
-            alert("o id do usuario é " + id);
+            alert("Usuário cadastrado com sucesso");
+           
            
         } catch (error) {
             alert("Erro ao cadastrar usuario " + error.message);            
@@ -93,7 +95,7 @@ export default function CadastroUsuario() {
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
+                id="nome"
                 value={nome}
                 label="Nome"
                 autoFocus
@@ -120,7 +122,7 @@ export default function CadastroUsuario() {
                 variant="outlined"
                 required
                 fullWidth
-                name="password"
+                name="senha"
                 label="Senha"
                 value={senha}
                 type="password"
@@ -151,6 +153,7 @@ export default function CadastroUsuario() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            
           >
             Cadastrar
           </Button>

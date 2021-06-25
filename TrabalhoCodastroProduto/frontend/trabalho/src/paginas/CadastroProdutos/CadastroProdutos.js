@@ -64,7 +64,7 @@ export default function CadastroProdutos() {
             const response = await api.put('produto', dados);
             const id = response.data.id;
             console.log(response.data);
-            alert("o id do produto é " + id);
+            alert("Produto cadastrado com sucesso");
        
         } catch (error) {
             alert("Erro ao cadastrar produto " + error.message);            
