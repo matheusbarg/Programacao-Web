@@ -126,8 +126,7 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-        <a href="http://localhost:3000/CadastroUsuario">
-         <button>Cadastro Usuario</button></a>
+        
          <a href="http://localhost:3000/cadastroProdutos">
          <button>Cadastro Produtos</button></a>
         </List>
