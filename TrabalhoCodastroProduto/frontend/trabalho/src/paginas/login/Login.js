@@ -64,7 +64,7 @@ export default function Login() {
           console.log(dados);
           const response = await api.put('login', dados);
           console.log(response);
-          window.open("http://localhost:3000/");
+          window.open("http://localhost:3000/menu");
 
       } catch (error) {
           alert("Login Invalido " + error.message);

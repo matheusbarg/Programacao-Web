@@ -11,10 +11,10 @@ function Routes() {
     return (
     <BrowserRouter>
       <Switch>
-        <Route  path="/" exact={true} component={menu} />
+        <Route  path="/" exact={true} component={login} />
         <Route  path="/CadastroUsuario" component={CadastroUsuario} />
         <Route  path="/CadastroProdutos" component={CadastroProdutos} />
-        <Route  path="/login" component={login} />
+        <Route  path="/menu" component={menu} />
         <Route  path="/TelaInicial" component={TelaInicial} />
        
        
