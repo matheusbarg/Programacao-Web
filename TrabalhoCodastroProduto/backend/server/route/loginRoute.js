@@ -6,14 +6,14 @@ const loginService = require('../service/loginService');
 router.put('/login', async function(req, res) {
    
     const user = req.body;
-    const userConnect = await loginService.auth(user);
+    const userConnect = await loginService.auten(user);
 
     if (userConnect!= "") {
        res.json(userConnect)
       
     } else {
-       console.log("Não conectou")
-       status.code(404);
+       console.log("Não conecta")
+       
     }
     
  });

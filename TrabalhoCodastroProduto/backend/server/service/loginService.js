@@ -1,6 +1,6 @@
   
 const loginData = require('../data/loginData');
 
-exports.auth = function(user) {
-   return loginData.authUser(user);
+exports.auten = function(user) {
+   return loginData.autenUser(user);
 }
