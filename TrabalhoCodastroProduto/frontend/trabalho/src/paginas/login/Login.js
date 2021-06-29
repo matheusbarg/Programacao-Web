@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import api from '../services/api';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -45,9 +46,33 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-
-export default function SignInSide() {
+export default function Login() {
+    
   const classes = useStyles();
+  const [email, getEmail] = useState('');
+  const [senha, getSenha] = useState('');
+
+  async function handleLogin(e) {
+      e.preventDefault();
+
+      const dados = {
+          email,
+          senha
+      };
+
+      try {
+          console.log(dados);
+          const response = await api.put('login', dados);
+          console.log(response);
+          window.open("http://localhost:3000/");
+
+      } catch (error) {
+          alert("Login Invalido " + error.message);
+          alert("Faaaiiiiilllll");
+      }
+  }
+
+
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -61,7 +86,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Login
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} noValidate onSubmit={handleLogin}>
             <TextField
               variant="outlined"
               margin="normal"
@@ -69,9 +94,11 @@ export default function SignInSide() {
               fullWidth
               id="email"
               label="Email"
+              value={email}
               name="email"
               autoComplete="email"
               autoFocus
+              onChange={e => getEmail(e.target.value)}
             />
             <TextField
               variant="outlined"
@@ -80,9 +107,11 @@ export default function SignInSide() {
               fullWidth
               name="password"
               label="Senha"
+              value={senha}
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={e => getSenha(e.target.value)}
             />
             
             <Button

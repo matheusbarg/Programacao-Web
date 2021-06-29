@@ -98,6 +98,7 @@ export default function CadastroProdutos() {
                 name="codigo"
                 autoComplete="codigo"
                 onChange={e => setCodigo(e.target.value)}
+                autoFocus
                
               />
             </Grid>
@@ -111,7 +112,6 @@ export default function CadastroProdutos() {
                 id="firstName"
                 value={nome}
                 label="Nome"
-                autoFocus
                 onChange={e => setNome(e.target.value)}
               />
             </Grid>

@@ -4,6 +4,7 @@ import CadastroUsuario from './paginas/CadastroUsuario/CadastroUsuario';
 import CadastroProdutos from './paginas/CadastroProdutos/CadastroProdutos';
 import menu from './paginas/menu';
 import login from './paginas/login/Login';
+import TelaInicial from './paginas/TelaInicial/telaInicial';
 
 
 function Routes() {
@@ -14,6 +15,7 @@ function Routes() {
         <Route  path="/CadastroUsuario" component={CadastroUsuario} />
         <Route  path="/CadastroProdutos" component={CadastroProdutos} />
         <Route  path="/login" component={login} />
+        <Route  path="/TelaInicial" component={TelaInicial} />
        
        
       </Switch>

@@ -106,7 +106,7 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-          Menu do Cadastro de Produtos
+         Cadastro de Produtos
           </Typography>
         </Toolbar>
       </AppBar>
@@ -126,9 +126,14 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
-        
          <a href="http://localhost:3000/cadastroProdutos">
          <button>Cadastro Produtos</button></a>
+         
+        </List>
+        <List>
+        <a href="http://localhost:3000/TelaInicial">
+         <button>Tela Inicial  </button></a>
+         
         </List>
         <Divider />
         
