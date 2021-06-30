@@ -13,6 +13,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import './menu.css';
 
 
 const drawerWidth = 240;
@@ -107,7 +109,11 @@ export default function PersistentDrawerLeft() {
           </IconButton>
           <Typography variant="h6" noWrap>
          Cadastro de Produtos
+        
           </Typography>
+          <a href="http://localhost:3000/">
+          <button id="botao">Logout
+         </button></a>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -132,7 +138,7 @@ export default function PersistentDrawerLeft() {
         </List>
         <List>
         <a href="http://localhost:3000/TelaInicial">
-         <button>Tela Inicial  </button></a>
+         <button>Listagem de produtos  </button></a>
          
         </List>
         <Divider />

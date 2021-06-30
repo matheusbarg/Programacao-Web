@@ -66,6 +66,7 @@ export default function CadastroUsuario() {
             const id = response.data.id;
             console.log(response.data);
             alert("Usuário cadastrado com sucesso");
+          window.open("http://localhost:3000/","_self");
            
            
         } catch (error) {
