@@ -13,5 +13,5 @@ exports.deleteProduto = function(produtoID){
 }
 
 exports.saveProduto = function(produto){
-    return database.one('insert into produto (codigo,nome,descricao,tamanho,preco) values ($1,$2,$3,$4,$5) returning *',
-    [produto.codigo,produto.nome,produto.descricao,produto.tamanho,produto.preco])};
+    return database.one('insert into produto (codigo,nome,descricao,tamanho,preco,foto) values ($1,$2,$3,$4,$5,$6) returning *',
+    [produto.codigo,produto.nome,produto.descricao,produto.tamanho,produto.preco,produto.foto])};

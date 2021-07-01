@@ -47,6 +47,7 @@ export default function CadastroProdutos() {
     const [descricao, setDescricao] = useState('');
     const [tamanho, setTamanho] = useState('');
     const [preco, setPreco] = useState('');
+    const [foto, setFoto] = useState('');
     
     async function handleCadastro(e) {
         e.preventDefault();
@@ -56,7 +57,8 @@ export default function CadastroProdutos() {
             nome,
             descricao,
             tamanho,
-            preco
+            preco,
+            foto
         };
 
         try {
@@ -123,7 +125,7 @@ export default function CadastroProdutos() {
                 fullWidth
                 id="descricao"
                 value={descricao}
-                label="descricao"
+                label="Descricao"
                 name="descricao"
                 autoComplete="descricao"
                 onChange={e => setDescricao(e.target.value)}
@@ -136,7 +138,7 @@ export default function CadastroProdutos() {
                 required
                 fullWidth
                 name="tamanho"
-                label="tamanho"
+                label="Tamanho"
                 value={tamanho}
                 type="tamanho"
                 id="tamanho"
@@ -150,11 +152,25 @@ export default function CadastroProdutos() {
                 required
                 fullWidth
                 id="preco"
-                label="preco"
+                label="Preco"
                 value={preco}
                 name="preco"
                 autoComplete="preco"
                 onChange={e => setPreco(e.target.value)}
+                        
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="foto"
+                label="Link foto"
+                value={foto}
+                name="foto"
+                autoComplete="foto"
+                onChange={e => setFoto(e.target.value)}
                         
               />
             </Grid>

@@ -13,6 +13,7 @@ router.put('/login', async function(req, res) {
       
     } else {
        console.log("Não conecta")
+       res.status(404).send("Usuario não encontrado");
        
     }
     

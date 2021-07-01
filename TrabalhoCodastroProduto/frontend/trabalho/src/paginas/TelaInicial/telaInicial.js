@@ -8,7 +8,10 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import api from '../services/api';
-import teste from '../../paginas/menu/index.js';
+import Button from '@material-ui/core/Button';
+import menu from '../../paginas/menu/index.js';
+import logo from './logo.jpg';
+
 
 
 
@@ -36,7 +39,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ListaProdutos()  {
+
+export default function ListaProdutos() {
   const classes = useStyles();
 
   const [produto, setProdutos] = useState([]);
@@ -58,15 +62,16 @@ export default function ListaProdutos()  {
 }, []);  
 
 
-return (
+
+  return (
     
     <TableContainer component={Paper}>
- 
+      
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
        
           <TableRow>
-      
+          <StyledTableCell  align="right">Foto</StyledTableCell >
             <StyledTableCell  align="right">Codigo</StyledTableCell >
             <StyledTableCell  align="right">Nome</StyledTableCell >
             <StyledTableCell  align="right">Descrição</StyledTableCell >
@@ -78,14 +83,14 @@ return (
         <TableBody>
           {produto.map(produto => (
             <StyledTableRow  key={produto.id}>
-          
+              <StyledTableCell>  <img src={produto.foto}  width="100" height="100" margin-left="10px"/> </StyledTableCell >
               <StyledTableCell  align="right">{produto.codigo}</StyledTableCell >
               <StyledTableCell  align="right">{produto.nome}</StyledTableCell >
               <StyledTableCell  align="right">{produto.descricao}</StyledTableCell >
               <StyledTableCell  align="right">{produto.tamanho}</StyledTableCell >
               <StyledTableCell  align="right">{"R$"+ produto.preco}</StyledTableCell >
               <StyledTableCell  align="center">
-                  <button type="button" onClick={() => handleDeleteProdutos(produto.codigo)}>Excluir</button></StyledTableCell >
+              <Button variant="contained" color="primary" type="button" onClick={() => handleDeleteProdutos(produto.codigo)}>Excluir</Button></StyledTableCell >
             </StyledTableRow >
           ))};
         </TableBody>
@@ -93,5 +98,6 @@ return (
     </TableContainer>
           
     )
-                    
+                          
 }
+
