@@ -15,6 +15,7 @@ import logo from './logo.jpg';
 
 
 
+
 const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: theme.palette.primary.main,
@@ -83,7 +84,7 @@ export default function ListaProdutos() {
         <TableBody>
           {produto.map(produto => (
             <StyledTableRow  key={produto.id}>
-              <StyledTableCell>  <img src={produto.foto}  width="100" height="100" margin-left="10px"/> </StyledTableCell >
+              <StyledTableCell>  <img src={produto.foto}  width="100" height="100" margin-left="10px" /> </StyledTableCell >
               <StyledTableCell  align="right">{produto.codigo}</StyledTableCell >
               <StyledTableCell  align="right">{produto.nome}</StyledTableCell >
               <StyledTableCell  align="right">{produto.descricao}</StyledTableCell >

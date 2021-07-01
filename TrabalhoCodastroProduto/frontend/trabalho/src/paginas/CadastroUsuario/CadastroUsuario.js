@@ -14,8 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 
-
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
@@ -113,6 +111,7 @@ export default function CadastroUsuario() {
                 value={email}
                 label="Email"
                 name="email"
+                placeholder="email@seudominio.com"
                 autoComplete="email"
                 onChange={e => setEmail(e.target.value)}
                
@@ -142,6 +141,7 @@ export default function CadastroUsuario() {
                 label="telefone"
                 value={telefone}
                 name="telefone"
+                placeholder="999-99999"
                 autoComplete="senha"
                 onChange={e => setTelefone(e.target.value)}
                         
