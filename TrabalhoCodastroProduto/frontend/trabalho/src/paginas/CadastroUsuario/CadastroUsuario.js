@@ -14,6 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
 
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(10),
@@ -71,8 +72,9 @@ export default function CadastroUsuario() {
             alert("Erro ao cadastrar usuario " + error.message);            
         }
     }
-
+  
   return (
+   
     
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -82,7 +84,7 @@ export default function CadastroUsuario() {
           
         </Avatar>
         
-        <form className={classes.form} noValidate onSubmit={handleCadastro}>
+        <form name ="form" className={classes.form} noValidate onSubmit={handleCadastro}>
         <Typography component="h1" variant="h5" >
           Cadastrar Usuario
         </Typography>
@@ -163,6 +165,7 @@ export default function CadastroUsuario() {
              
             </Grid>
           </Grid>
+          
         </form>
       </div>
       <Box mt={5}>
@@ -172,4 +175,5 @@ export default function CadastroUsuario() {
  
     
   );
+
 }

@@ -67,6 +67,7 @@ export default function CadastroProdutos() {
             const id = response.data.id;
             console.log(response.data);
             alert("Produto cadastrado com sucesso");
+            window.location.reload();
        
         } catch (error) {
             alert("Erro ao cadastrar produto " + error.message);            
@@ -181,6 +182,7 @@ export default function CadastroProdutos() {
             variant="contained"
             color="primary"
             className={classes.submit}
+           
           >
             Cadastrar
           </Button>
