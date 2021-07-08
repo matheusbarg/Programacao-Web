@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import api from '../services/api';
 import Button from '@material-ui/core/Button';
 import menu from '../menu/index.js';
-import logo from './logo.jpg';
+import { Typography } from '@material-ui/core';
 
 
 
@@ -41,24 +41,24 @@ const useStyles = makeStyles({
 });
 
 
-export default function ListaProdutos() {
+export default function ListaUsuarios() {
   const classes = useStyles();
 
-  const [produto, setProdutos] = useState([]);
+  const [usuario, setUsuarios] = useState([]);
 
-  async function handleDeleteProdutos(id) {
+  async function handleDeleteUsuarios(id) {
     try {
       console.log(id);
-        await api.delete(`produto/${id}`, {});
-        setProdutos(produto.filter(produto => produto.codigo !== id));
+        await api.delete(`usuario/${id}`, {});
+        setUsuarios(usuario.filter(usuario => usuario.idusuario !== id));
     } catch (error) {
-        alert('Erro ao deletar produto');
+        alert('Erro ao deletar usuario');
     }
 }
 
   useEffect(() => {
-    api.get('produtos',{}).then(response => {
-        setProdutos(response.data);
+    api.get('usuarios',{}).then(response => {
+        setUsuarios(response.data);
     });
 }, []);  
 
@@ -67,31 +67,25 @@ export default function ListaProdutos() {
   return (
     
     <TableContainer component={Paper}>
-      
       <Table className={classes.table} size="small" aria-label="a dense table">
         <TableHead>
        
           <TableRow>
-          <StyledTableCell  align="left">Foto</StyledTableCell >
-            <StyledTableCell  align="right">Codigo</StyledTableCell >
+          <StyledTableCell  align="right">Foto</StyledTableCell >
             <StyledTableCell  align="right">Nome</StyledTableCell >
-            <StyledTableCell  align="right">Descrição</StyledTableCell >
-            <StyledTableCell  align="right">Tamanho</StyledTableCell >
-            <StyledTableCell  align="right">Preco</StyledTableCell >
-            <StyledTableCell  align="center">Excluir</StyledTableCell >
+            <StyledTableCell  align="right">Email</StyledTableCell >
+            <StyledTableCell  align="right">Telefone</StyledTableCell >
+       
           </TableRow>
         </TableHead>
         <TableBody>
-          {produto.map(produto => (
-            <StyledTableRow  key={produto.id}>
-              <StyledTableCell>  <img src={produto.foto}  width="200" height="200" margin-left="10px" /> </StyledTableCell >
-              <StyledTableCell  align="right">{produto.codigo}</StyledTableCell >
-              <StyledTableCell  align="right">{produto.nome}</StyledTableCell >
-              <StyledTableCell  align="right">{produto.descricao}</StyledTableCell >
-              <StyledTableCell  align="right">{produto.tamanho}</StyledTableCell >
-              <StyledTableCell  align="right">{"R$"+ produto.preco}</StyledTableCell >
-              <StyledTableCell  align="center">
-              <Button variant="contained" color="primary" type="button" onClick={() => handleDeleteProdutos(produto.codigo)}>Excluir</Button></StyledTableCell >
+          {usuario.map(usuario => (
+            <StyledTableRow  key={usuario.id}>
+              <StyledTableCell>  <img src={usuario.foto}  width="100" height="100" margin-left="10px" /> </StyledTableCell >
+              <StyledTableCell  align="right">{usuario.nome}</StyledTableCell >
+              <StyledTableCell  align="right">{usuario.email}</StyledTableCell >
+              <StyledTableCell  align="right">{usuario.telefone}</StyledTableCell >
+             
             </StyledTableRow >
           ))};
         </TableBody>

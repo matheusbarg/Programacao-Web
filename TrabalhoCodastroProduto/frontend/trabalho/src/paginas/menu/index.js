@@ -143,6 +143,16 @@ export default function PersistentDrawerLeft() {
         <Button variant="contained" color="primary">Listagem de Produtos</Button></a>
          
         </List>
+        <List>
+        <a href="http://localhost:3000/ListaUsuarios">
+        <Button variant="contained" color="primary">Listagem de Usuarios</Button></a>
+         
+        </List>
+        <List>
+        <a href="http://localhost:3000/faq">
+        <Button variant="contained" color="primary">FAQ</Button></a>
+         
+        </List>
         <Divider />
         
       </Drawer>

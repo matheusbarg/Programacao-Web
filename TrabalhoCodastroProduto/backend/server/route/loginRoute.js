@@ -27,6 +27,9 @@ router.put('/login', async function(req, res) {
        
     }
     
+   router.post('/logout', function(req, res) {
+    res.json({ auth: false, token: null });
+})
  });
 
 module.exports = router;

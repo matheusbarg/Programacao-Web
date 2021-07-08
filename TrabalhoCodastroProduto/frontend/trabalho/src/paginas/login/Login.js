@@ -124,11 +124,7 @@ export default function Login() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Esqueceu a senha?
-                </Link>
-              </Grid>
+              
               <Grid item>
                 <Link href="http://localhost:3000/CadastroUsuario" variant="body2">
                 {"Você não possui uma conta? Cadastre-se"}
