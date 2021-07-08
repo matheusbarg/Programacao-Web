@@ -164,9 +164,7 @@ export default function PersistentDrawerLeft() {
           <Typography paragraph>
       
           </Typography>
-          <div id="logo">
-            <img src={logo} alt="Logo LA Store" width="650" height="500"/>
-          </div>
+         
           <Typography paragraph>
               <h1> Perguntas frequentes:</h1>
           </Typography>
