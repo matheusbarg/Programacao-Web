@@ -2,11 +2,28 @@ const express = require('express');
 const { func } = require('../database/database');
 const router = express.Router();
 const booksService = require('../service/booksService');
+const redis = require('redis');
+const client = redis.createClient();
 
 router.get('/books',async function(req,res){
-    const books = await booksService.getBooks();
-    res.json(books);
+   
+    client.exists('books',async function(err, reply) {
+        if (reply === 1) {
+            console.log('Existe');
+            client.get('books', function(err, reply) {
+                console.log(reply);
+              });
+          
+        } else {
+          console.log('Nao existe');
+          const books = await booksService.getBooks();
+            res.json(books);
+          
+        }
+      });
+      
 });
+
 
 router.get("/book/:id",async function(req,res){
     const book = await booksService.getBook(req.params.id);
